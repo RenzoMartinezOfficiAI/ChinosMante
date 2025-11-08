@@ -19,6 +19,14 @@ const Hero: React.FC = () => {
           We turn distressed real estate into opportunities for both financial returns and genuine human stability. If your deal fits, we move fast. If not, we'll guide you to the right place.
         </p>
         <div className="mt-10 flex items-center justify-center gap-x-6">
+          <Button
+            href="https://calendly.com/thechinomante/zoom-meeting-with-chino"
+            variant="primary"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Schedule a Meeting
+          </Button>
           <Button href="#deal-scorecard" variant="secondary">Score Your Deal</Button>
         </div>
       </div>

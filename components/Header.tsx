@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from './Button';
 
 const Header: React.FC = () => {
   const handleNavClick = (event: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
@@ -23,6 +24,15 @@ const Header: React.FC = () => {
             <a href="#deal-scorecard" onClick={(e) => handleNavClick(e, '#deal-scorecard')} className="text-sm font-medium text-[#B3A8D6] hover:text-white transition-colors">Creative Scorecard</a>
             <a href="#fix-and-flip-scorecard" onClick={(e) => handleNavClick(e, '#fix-and-flip-scorecard')} className="text-sm font-medium text-[#B3A8D6] hover:text-white transition-colors">Fix &amp; Flip Scorecard</a>
             <a href="#scorecard-faq" onClick={(e) => handleNavClick(e, '#scorecard-faq')} className="text-sm font-medium text-[#B3A8D6] hover:text-white transition-colors">FAQ</a>
+            <Button
+              href="https://calendly.com/thechinomante/zoom-meeting-with-chino"
+              variant="secondary"
+              className="py-2 px-5 text-sm"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Schedule a Meeting
+            </Button>
           </nav>
         </div>
       </div>

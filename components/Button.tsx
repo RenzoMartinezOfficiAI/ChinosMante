@@ -7,9 +7,11 @@ interface ButtonProps {
   href?: string;
   className?: string;
   disabled?: boolean;
+  target?: string;
+  rel?: string;
 }
 
-const Button: React.FC<ButtonProps> = ({ children, onClick, variant = 'primary', href, className = '', disabled = false }) => {
+const Button: React.FC<ButtonProps> = ({ children, onClick, variant = 'primary', href, className = '', disabled = false, target, rel }) => {
   const baseClasses = "inline-block text-center font-bold rounded-lg transition-all duration-300 ease-in-out text-base py-3 px-8 focus:outline-none focus:ring-4";
 
   const variantClasses = {
@@ -26,7 +28,7 @@ const Button: React.FC<ButtonProps> = ({ children, onClick, variant = 'primary',
       return <span className={classes}>{children}</span>;
     }
     return (
-      <a href={href} className={classes}>
+      <a href={href} className={classes} target={target} rel={rel}>
         {children}
       </a>
     );

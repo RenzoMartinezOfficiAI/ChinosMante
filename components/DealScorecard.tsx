@@ -2,6 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { SCORECARD_DATA } from '../constants';
 import { ScorecardScores } from '../types';
 import { InfoIcon } from './Icons';
+import Button from './Button';
 
 const DealScorecard: React.FC = () => {
   const initialScores: ScorecardScores = {
@@ -25,8 +26,9 @@ const DealScorecard: React.FC = () => {
       return { averageScore: 0, isComplete: false, resultText: 'Complete all fields to see your score.', scoreColor: 'text-[#7A6F9A]', progress: 0 };
     }
 
-    // Fix: Ensure reduce performs numeric addition, as values can be strings, leading to concatenation.
-    const total = validScores.reduce((acc, curr) => acc + Number(curr), 0);
+    // Fix: Explicitly providing the generic type to `reduce` ensures that the
+    // accumulator (`acc`) is correctly typed as a number, resolving the arithmetic error.
+    const total = validScores.reduce<number>((acc, curr) => acc + Number(curr), 0);
     const average = total / 6;
     const isGoodDeal = average >= 6;
     
@@ -109,7 +111,21 @@ const DealScorecard: React.FC = () => {
                     {isComplete ? averageScore.toFixed(1) : '-'}
                 </span>
             </div>
-            <p className="mt-6 text-lg font-semibold h-24 flex items-center justify-center">{resultText}</p>
+            <p className="mt-6 text-lg font-semibold h-12 flex items-center justify-center">{resultText}</p>
+            
+            <div className="mt-6 pt-6 w-full border-t border-[#7A6F9A]/30">
+                <h4 className="text-xl font-bold text-white">Ready to Submit?</h4>
+                <p className="text-[#B3A8D6] text-sm mt-2 mb-4 max-w-xs mx-auto">
+                  Attach all the good stuff–photos, address, purchase price, and why you think it’s a winner.
+                </p>
+                <Button
+                  href="mailto:deals@chinomante.com"
+                  variant="primary"
+                  className="w-full"
+                >
+                  deals@chinomante.com
+                </Button>
+            </div>
         </div>
       </div>
     </section>

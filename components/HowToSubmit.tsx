@@ -24,7 +24,7 @@ const ChecklistItem: React.FC<{ item: FixAndFlipChecklistItem; isChecked: boolea
           id={item.id}
           checked={isChecked}
           onChange={() => onCheck(item.id)}
-          className="h-5 w-5 rounded bg-transparent border-2 border-[#7A6F9A] text-[#9B5CFF] focus:ring-2 focus:ring-offset-0 focus:ring-offset-transparent focus:ring-[#9B5CFF] cursor-pointer"
+          className="h-6 w-6 flex-shrink-0 rounded bg-transparent border-2 border-[#7A6F9A] text-[#9B5CFF] focus:ring-2 focus:ring-offset-0 focus:ring-offset-transparent focus:ring-[#9B5CFF] cursor-pointer"
         />
         <label htmlFor={item.id} className="ml-4 text-[#B3A8D6] cursor-pointer">
           {item.label}
@@ -131,8 +131,11 @@ const FixAndFlipScorecard: React.FC = () => {
       <h2 className="font-orbitron text-3xl sm:text-4xl font-bold text-center mb-4">
         Submission & Deal Rating for Fix & Flips
       </h2>
-      <p className="text-center text-lg text-[#B3A8D6] max-w-3xl mx-auto mb-12">
+      <p className="text-center text-lg text-[#B3A8D6] max-w-3xl mx-auto mb-4">
         Use this checklist to evaluate your fix and flip deal. The more items checked, the better the deal.
+      </p>
+      <p className="text-center text-lg text-[#B3A8D6] max-w-3xl mx-auto mb-12">
+        If the deal fits the Fix and Flip buybox, please email <a href="mailto:fixandflip@chinomante.com" className="font-medium text-[#39E2FF] hover:underline transition-colors">fixandflip@chinomante.com</a>.
       </p>
 
       <Checklist data={FIX_AND_FLIP_SUBMISSION_DATA} checkedItems={checkedItems} onCheck={handleCheckChange} scores={scores} />

@@ -64,7 +64,7 @@ const BuyBoxCard: React.FC<BuyBoxCardProps> = ({ title, description, bullets, ct
 
               return (
                    <li key={index} className="flex items-start">
-                      <CheckCircleIcon className="h-5 w-5 text-[#C5FF3A] mt-0.5 mr-3 flex-shrink-0" />
+                      <CheckCircleIcon className="h-6 w-6 text-[#C5FF3A] mr-3 flex-shrink-0" />
                       <span>
                         <strong className="text-white">{label}:</strong>
                         <span className="text-[#B3A8D6]">{content}</span>
